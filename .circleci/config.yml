@@ -1,0 +1,13 @@
+version: 2
+jobs:   
+  build:
+    machine: true
+    steps:
+      - add_ssh_keys:
+          fingerprints: 
+            - "e4:59:fe:67:0e:e9:6a:cb:f5:c1:2c:24:40:3d:ab:8d"
+      - checkout
+      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run: docker build -t mimorgal/hola-docker:$CIRCLE_SHA1 .
+      - run: docker push mimorgal/hola-docker:$CIRCLE_SHA1
+      - run: ssh -o StrictHostKeyChecking=no ubuntu@18.237.107.100 "/bin/bash /home/ubuntu/deploy.sh $CIRCLE_SHA1"
