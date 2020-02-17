@@ -1,0 +1,2 @@
+nginx_test:
+  image: mimorgal/hola-docker:latest

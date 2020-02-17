@@ -1,0 +1,4 @@
+nginx_test:
+  image: mimorgal/hola-docker
+  expose:
+    - "80"
