@@ -10,4 +10,4 @@ jobs:
       - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run: docker build -t mimorgal/hola-docker:$CIRCLE_SHA1 .
       - run: docker push mimorgal/hola-docker:$CIRCLE_SHA1
-      - run: ssh -o StrictHostKeyChecking=no ubuntu@18.237.107.100 "/bin/bash /home/ubuntu/deploy.sh $CIRCLE_SHA1"
+      - run: ssh -o StrictHostKeyChecking=no ubuntu@54.188.89.173 "/bin/bash /home/ubuntu/deploy.sh $CIRCLE_SHA1"
