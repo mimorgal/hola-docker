@@ -5,7 +5,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints: 
-            - "e4:59:fe:67:0e:e9:6a:cb:f5:c1:2c:24:40:3d:ab:8d"
+            - "17:55:eb:56:09:af:0e:f0:b4:63:de:8c:f5:37:60:c4"
       - checkout
       - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run: docker build -t mimorgal/hola-docker:$CIRCLE_SHA1 .
